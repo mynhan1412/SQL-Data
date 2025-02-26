@@ -48,3 +48,9 @@ UPDATE club_member_info_cleaned
 SET full_name = UPPER(TRIM(full_name));
 ```
 
+Correct age
+```sql
+UPDATE club_member_info_cleaned
+SET age = (SELECT MODE(age) FROM club_member_info_cleaned)
+WHERE age < 18 OR age > 100 OR age IS NULL;
+```
