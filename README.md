@@ -45,9 +45,6 @@ SELECT * FROM club_member_info
 Inconsistent name format
 ```sql
 UPDATE club_member_info_cleaned
-SET full_name = TRIM(full_name);
+SET full_name = UPPER(TRIM(full_name));
 ```
-```sql
-UPDATE club_member_info_cleaned
-SET full_name = UPPER(full_name);
-```
+
