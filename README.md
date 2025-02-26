@@ -44,6 +44,10 @@ SELECT * FROM club_member_info
 ##### Clean data set
 Inconsistent name format
 ```sql
-SELECT UPPER(TRIM(full_name)) AS new_full_name
-FROM club_member_info_cleaned cmic ;
+UPDATE club_member_info_cleaned
+SET full_name = TRIM(full_name);
+```
+```sql
+UPDATE club_member_info_cleaned
+SET full_name = UPPER(full_name);
 ```
