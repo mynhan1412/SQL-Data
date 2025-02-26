@@ -54,3 +54,12 @@ UPDATE club_member_info_cleaned
 SET age = (SELECT MODE(age) FROM club_member_info_cleaned)
 WHERE age < 18 OR age > 100 OR age IS NULL;
 ```
+
+Update martial status
+```sql
+UPDATE club_member_info_cleaned
+SET martial_status = 'NULL'
+WHERE martial_status NOT IN ('single','married','divorced');
+```
+
+
