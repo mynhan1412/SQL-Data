@@ -41,3 +41,9 @@ Copy all values from original table
 INSERT INTO club_member_info_cleaned
 SELECT * FROM club_member_info
 ```
+##### Clean data set
+Inconsistent name format
+```sql
+SELECT UPPER(TRIM(full_name)) AS new_full_name
+FROM club_member_info_cleaned cmic ;
+```
